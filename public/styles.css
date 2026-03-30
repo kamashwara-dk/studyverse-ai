@@ -1684,3 +1684,554 @@ body {
 .rag-sources {
   animation: slideIn 0.3s ease;
 }
+ity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.flex-1 { flex: 1; }
+
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+    --topbar-height: 56px;
+  }
+
+  .module-panel {
+    padding: 16px;
+  }
+
+  .glass-card {
+    padding: 16px;
+  }
+
+  .rag-container {
+    grid-template-columns: 260px 1fr;
+    gap: 12px;
+  }
+
+  .placeholder-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .flashcard-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --topbar-height: 56px;
+    font-size: 15px;
+  }
+
+  /* Hide sidebar by default on mobile */
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    width: 280px;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Show menu toggle on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Adjust topbar for mobile */
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .page-title {
+    font-size: 1rem;
+  }
+
+  .page-badge {
+    display: none;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+  .ai-mode-selector label {
+    display: none;
+  }
+
+  .ai-mode-selector select {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  /* Content area adjustments */
+  .module-panel {
+    padding: 12px;
+  }
+
+  /* Welcome message */
+  .welcome-message {
+    padding: 40px 16px 30px;
+  }
+
+  .welcome-icon {
+    font-size: 2.5rem;
+  }
+
+  .welcome-message h2 {
+    font-size: 1.3rem;
+  }
+
+  .welcome-message p {
+    font-size: 0.85rem;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quick-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Chat messages */
+  .message {
+    max-width: 95%;
+  }
+
+  .message-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .message-content {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  /* Chat input */
+  .input-wrapper {
+    padding: 6px 6px 6px 12px;
+  }
+
+  .input-wrapper textarea {
+    font-size: 0.85rem;
+  }
+
+  .btn-send, .btn-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* RAG Module - Stack vertically on mobile */
+  .rag-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rag-sidebar {
+    order: 2;
+  }
+
+  .rag-chat {
+    order: 1;
+    min-height: 400px;
+  }
+
+  .upload-zone {
+    padding: 20px;
+  }
+
+  /* Agent Module */
+  .agent-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .agent-icon {
+    font-size: 2rem;
+  }
+
+  .glass-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .placeholder-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .placeholder-card {
+    padding: 16px 12px;
+  }
+
+  .agent-step-header {
+    flex-wrap: wrap;
+  }
+
+  .step-purpose {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  /* Tool containers */
+  .tool-input-group.row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .style-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .style-selector select {
+    width: 100%;
+  }
+
+  /* Flashcards */
+  .flashcard-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .flashcard {
+    height: 180px;
+  }
+
+  /* Quiz */
+  .quiz-question {
+    padding: 16px;
+  }
+
+  .quiz-question-text {
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .quiz-option {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  /* Mind Map */
+  .mindmap-container {
+    min-height: 300px;
+  }
+
+  .mindmap-svg {
+    min-height: 300px;
+  }
+
+  /* Vision Module */
+  .vision-dropzone {
+    padding: 30px 20px;
+  }
+
+  .vision-preview {
+    max-height: 250px;
+  }
+
+  /* Voice Module */
+  .voice-main {
+    padding: 0 12px;
+  }
+
+  .voice-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .voice-record-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .voice-record-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Toast notifications */
+  .toast-container {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .toast {
+    max-width: 100%;
+  }
+
+  /* Loading overlay */
+  .loader-text {
+    font-size: 0.85rem;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 260px;
+  }
+
+  .topbar {
+    padding: 0 8px;
+  }
+
+  .page-title {
+    font-size: 0.95rem;
+  }
+
+  .module-panel {
+    padding: 8px;
+  }
+
+  .glass-card {
+    padding: 12px;
+  }
+
+  .glass-card h2 {
+    font-size: 1rem;
+  }
+
+  .glass-card p {
+    font-size: 0.8rem;
+  }
+
+  .welcome-message {
+    padding: 30px 12px 20px;
+  }
+
+  .welcome-icon {
+    font-size: 2rem;
+  }
+
+  .welcome-message h2 {
+    font-size: 1.2rem;
+  }
+
+  .message-content {
+    font-size: 0.82rem;
+  }
+
+  .placeholder-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .agent-icon {
+    font-size: 1.8rem;
+  }
+
+  .flashcard {
+    height: 160px;
+  }
+
+  .flashcard-front, .flashcard-back {
+    padding: 16px;
+    font-size: 0.82rem;
+  }
+
+  .quiz-score .score-value {
+    font-size: 2rem;
+  }
+
+  .voice-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .voice-record-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .welcome-message {
+    padding: 20px 16px;
+  }
+
+  .welcome-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .welcome-message h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .quick-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .quick-btn {
+    width: auto;
+    flex: 1 1 45%;
+  }
+
+  .voice-visualizer {
+    padding: 20px 0;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .nav-item {
+    padding: 12px;
+    min-height: 44px;
+  }
+
+  .btn-icon, .btn-send {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .btn-primary, .btn-secondary {
+    min-height: 44px;
+  }
+
+  .quiz-option {
+    min-height: 48px;
+  }
+
+  .flashcard {
+    min-height: 180px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .nav-item:hover {
+    background: transparent;
+  }
+
+  .nav-item.active {
+    background: rgba(167, 139, 250, 0.12);
+  }
+
+  .quick-btn:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
+
+  /* Add active states for touch feedback */
+  .nav-item:active {
+    background: var(--bg-glass-strong);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  .quick-btn:active {
+    background: rgba(167, 139, 250, 0.15);
+  }
+}
+
+/* Sidebar overlay for mobile */
+@media (max-width: 768px) {
+  .sidebar.open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+/* Improve scrolling on mobile */
+@media (max-width: 768px) {
+  .chat-messages,
+  .rag-chat .chat-messages,
+  .agent-results,
+  .quiz-container,
+  .tool-output {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Optimize background orbs for mobile */
+@media (max-width: 768px) {
+  .orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orb-2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .orb-3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orb-4 {
+    display: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sidebar,
+  .topbar,
+  .chat-input-area,
+  .loading-overlay,
+  .toast-container,
+  .bg-orbs {
+    display: none !important;
+  }
+
+  .main-content {
+    margin: 0;
+  }
+
+  .module-panel {
+    padding: 0;
+  }
+
+  .glass-card {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
