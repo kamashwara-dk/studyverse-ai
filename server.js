@@ -28,8 +28,8 @@ function handleError(res, error, label = '') {
   res.status(status).json({ error: error.message || 'Internal server error' });
 }
 
-// File upload config
-const uploadDir = path.join(__dirname, 'uploads');
+// File upload config (use /tmp for Vercel serverless)
+const uploadDir = process.env.VERCEL ? '/tmp/uploads' : path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
 const storage = multer.diskStorage({
@@ -45,6 +45,11 @@ const upload = multer({ storage, limits: { fileSize: 20 * 1024 * 1024 } }); // 2
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'StudyVerse AI', version: '1.0.0' });
+});
+
+// Root route for Vercel
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // --- General Chat ---
