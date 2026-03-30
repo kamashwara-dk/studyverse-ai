@@ -1730,6 +1730,17 @@ ity: 0; transform: translateX(100px); }
     font-size: 15px;
   }
 
+  /* Fix for mobile viewport height (accounts for browser UI) */
+  body {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+
+  .app-container {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+
   /* Hide sidebar by default on mobile */
   .sidebar {
     position: fixed;
@@ -1777,11 +1788,36 @@ ity: 0; transform: translateX(100px); }
   /* Content area adjustments */
   .module-panel {
     padding: 12px;
+    padding-bottom: 0;
+  }
+
+  /* Fix chat container height on mobile */
+  .chat-container {
+    height: calc(var(--vh, 1vh) * 100 - var(--topbar-height));
+    max-height: calc(var(--vh, 1vh) * 100 - var(--topbar-height));
+  }
+
+  /* Ensure chat messages don't overflow */
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding-bottom: 8px;
+  }
+
+  /* Fix chat input area positioning */
+  .chat-input-area {
+    flex-shrink: 0;
+    padding: 8px 12px 12px;
+    background: var(--bg-primary);
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
   }
 
   /* Welcome message */
   .welcome-message {
-    padding: 40px 16px 30px;
+    padding: 30px 16px 20px;
   }
 
   .welcome-icon {
@@ -1799,6 +1835,7 @@ ity: 0; transform: translateX(100px); }
   .quick-actions {
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 20px;
   }
 
   .quick-btn {
@@ -1844,11 +1881,28 @@ ity: 0; transform: translateX(100px); }
 
   .rag-sidebar {
     order: 2;
+    max-height: 300px;
   }
 
   .rag-chat {
     order: 1;
-    min-height: 400px;
+    min-height: calc(var(--vh, 1vh) * 100 - var(--topbar-height) - 320px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rag-chat .chat-messages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  .rag-chat .chat-input-area {
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    background: var(--bg-primary);
+    padding: 8px 0 12px;
   }
 
   .upload-zone {

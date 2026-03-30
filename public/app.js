@@ -775,6 +775,18 @@ document.getElementById('posterBtn').addEventListener('click', async () => {
 // Initialize
 // ============================================
 
+// Fix viewport height on mobile (accounts for browser address bar)
+function setMobileVH() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+if (window.innerWidth <= 768) {
+  setMobileVH();
+  window.addEventListener('resize', setMobileVH);
+  window.addEventListener('orientationchange', setMobileVH);
+}
+
 // Check API health
 fetch(`${API_BASE}/api/health`)
   .then(r => r.json())
