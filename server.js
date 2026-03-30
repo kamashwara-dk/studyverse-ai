@@ -204,9 +204,14 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`\n🚀 StudyVerse AI is running at http://localhost:${PORT}`);
-  console.log(`📚 API Base: ${process.env.API_BASE_URL}`);
-  console.log(`🔑 API Key: ${process.env.API_KEY ? '✓ Configured' : '✗ Missing'}\n`);
-});
+// Start server (only in local development)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 StudyVerse AI is running at http://localhost:${PORT}`);
+    console.log(`📚 API Base: ${process.env.API_BASE_URL}`);
+    console.log(`🔑 API Key: ${process.env.API_KEY ? '✓ Configured' : '✗ Missing'}\n`);
+  });
+}
+
+// Export for Vercel serverless
+module.exports = app;
