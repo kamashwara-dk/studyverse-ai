@@ -22,7 +22,7 @@ npm install
 
 2. Create `.env` file (copy from `.env.example`):
 ```bash
-API_KEY=your_api_key_here
+API_KEY=api_key_here
 API_BASE_URL=https://apidev.navigatelabsai.com
 PORT=3000
 ```
@@ -39,8 +39,8 @@ npm start
 1. Push your code to GitHub
 2. Import your repository in Vercel
 3. Add environment variables in Vercel dashboard:
-   - `API_KEY`: Your NavigateLabs API key
-   - `API_BASE_URL`: https://apidev.navigatelabsai.com
+   - `API_KEY`: API key
+   - `API_BASE_URL`: URL_LINK
    - `NODE_ENV`: production
 4. Deploy!
 
