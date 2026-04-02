@@ -775,6 +775,92 @@ document.getElementById('posterBtn').addEventListener('click', async () => {
 // Initialize
 // ============================================
 
+// Hero Landing Page Animation
+const heroLanding = document.getElementById('heroLanding');
+const mainApp = document.getElementById('mainApp');
+const heroEnterBtn = document.getElementById('heroEnterBtn');
+const heroParticles = document.getElementById('heroParticles');
+
+// Create floating particles
+function createParticles() {
+  const colors = ['#b794f6', '#22d3ee', '#f472b6', '#4ade80', '#fbbf24'];
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 20 + 's';
+    particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    heroParticles.appendChild(particle);
+  }
+}
+
+createParticles();
+
+// Enter app function
+function enterApp() {
+  heroLanding.classList.add('hidden');
+  setTimeout(() => {
+    heroLanding.style.display = 'none';
+    mainApp.style.display = 'flex';
+    setTimeout(() => {
+      mainApp.classList.add('visible');
+    }, 50);
+  }, 800);
+}
+
+// Button click to enter
+heroEnterBtn.addEventListener('click', enterApp);
+
+// Scroll to enter (Apple-style)
+let scrollTimeout;
+let scrollCount = 0;
+
+window.addEventListener('wheel', (e) => {
+  if (heroLanding.style.display !== 'none') {
+    e.preventDefault();
+    
+    clearTimeout(scrollTimeout);
+    scrollCount++;
+    
+    scrollTimeout = setTimeout(() => {
+      scrollCount = 0;
+    }, 1000);
+    
+    // Enter after 3 scroll actions
+    if (scrollCount >= 3) {
+      enterApp();
+      scrollCount = 0;
+    }
+  }
+}, { passive: false });
+
+// Touch swipe to enter (mobile)
+let touchStartY = 0;
+let touchEndY = 0;
+
+heroLanding.addEventListener('touchstart', (e) => {
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+heroLanding.addEventListener('touchend', (e) => {
+  touchEndY = e.changedTouches[0].screenY;
+  const swipeDistance = touchStartY - touchEndY;
+  
+  // Swipe up to enter
+  if (swipeDistance > 100) {
+    enterApp();
+  }
+}, { passive: true });
+
+// Auto-enter after 10 seconds (optional)
+setTimeout(() => {
+  if (heroLanding.style.display !== 'none') {
+    // Uncomment to enable auto-enter
+    // enterApp();
+  }
+}, 10000);
+
 // Fix viewport height on mobile (accounts for browser address bar)
 function setMobileVH() {
   const vh = window.innerHeight * 0.01;

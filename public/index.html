@@ -20,6 +20,60 @@
   </div>
 
   <div class="app-container">
+    <!-- Landing Hero Section -->
+    <section class="hero-landing" id="heroLanding">
+      <div class="hero-content">
+        <div class="hero-logo-large">
+          <svg width="120" height="120" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#heroLogoGrad)" stroke-width="2" fill="none"/>
+            <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#heroLogoGrad)"/>
+            <defs><linearGradient id="heroLogoGrad" x1="2" y1="2" x2="26" y2="26"><stop stop-color="#b794f6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          </svg>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-title-line">Welcome to</span>
+          <span class="hero-title-main">StudyVerse AI</span>
+        </h1>
+        <p class="hero-subtitle">Your intelligent academic command center powered by advanced AI</p>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <div class="feature-icon">🧠</div>
+            <div class="feature-text">AI Tutor</div>
+          </div>
+          <div class="hero-feature">
+            <div class="feature-icon">📚</div>
+            <div class="feature-text">Document Q&A</div>
+          </div>
+          <div class="hero-feature">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-text">Smart Tools</div>
+          </div>
+          <div class="hero-feature">
+            <div class="feature-icon">🚀</div>
+            <div class="feature-text">AI Agents</div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <button class="hero-btn-primary" id="heroEnterBtn">
+            <span>Enter StudyVerse</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-icon">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Scroll to explore</span>
+        </div>
+      </div>
+      <div class="hero-particles" id="heroParticles"></div>
+    </section>
+
+    <!-- Main App Container (Hidden Initially) -->
+    <div class="main-app" id="mainApp" style="display: none;">
     <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
       <div class="sidebar-header">
@@ -395,6 +449,8 @@
 
       </div>
     </main>
+    </div>
+    <!-- End Main App -->
   </div>
 
   <!-- Loading Overlay -->
