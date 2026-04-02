@@ -610,6 +610,11 @@ body::before {
   position: relative;
 }
 
+[data-theme="light"] .sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.1);
+}
+
 .sidebar::before {
   content: '';
   position: absolute;
@@ -844,6 +849,11 @@ body::before {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+[data-theme="light"] .topbar {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
 .topbar::after {
   content: '';
   position: absolute;
@@ -997,8 +1007,17 @@ body::before {
   outline: none;
 }
 
+[data-theme="light"] .ai-mode-selector select {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
 .ai-mode-selector select:focus {
-  border-color: var(--accent-purple);
+  border-color: var(--accent-primary);
+}
+
+[data-theme="light"] .ai-mode-selector select:focus {
+  border-color: var(--accent-primary);
 }
 
 /* === Content Area === */
@@ -1158,13 +1177,19 @@ body::before {
   background: var(--bg-glass-strong);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-family: var(--font-main);
   font-size: 0.8rem;
   cursor: pointer;
   transition: var(--transition-bounce);
   position: relative;
   overflow: hidden;
+}
+
+[data-theme="light"] .quick-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .quick-btn::before {
@@ -1237,15 +1262,29 @@ body::before {
 }
 
 .message.user .message-content {
-  background: rgba(167, 139, 250, 0.15);
-  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(115, 115, 115, 0.15);
+  border: 1px solid rgba(115, 115, 115, 0.2);
   border-top-right-radius: 4px;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .message.user .message-content {
+  background: rgba(82, 82, 82, 0.1);
+  border: 1px solid rgba(82, 82, 82, 0.2);
+  color: var(--text-primary);
 }
 
 .message.ai .message-content {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-top-left-radius: 4px;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .message.ai .message-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .message-content h1, .message-content h2, .message-content h3 {
@@ -1315,9 +1354,19 @@ body::before {
   transition: var(--transition);
 }
 
+[data-theme="light"] .input-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
 .input-wrapper:focus-within {
-  border-color: var(--accent-purple);
-  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(115, 115, 115, 0.1);
+}
+
+[data-theme="light"] .input-wrapper:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(82, 82, 82, 0.1);
 }
 
 .input-wrapper.large {
@@ -1340,6 +1389,10 @@ body::before {
 }
 
 .input-wrapper textarea::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .input-wrapper textarea::placeholder {
   color: var(--text-muted);
 }
 
@@ -1769,9 +1822,19 @@ body::before {
   transition: var(--transition);
 }
 
+[data-theme="light"] .tool-input {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
 .tool-input:focus {
-  border-color: var(--accent-purple);
-  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(115, 115, 115, 0.1);
+}
+
+[data-theme="light"] .tool-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(82, 82, 82, 0.1);
 }
 
 .tool-textarea {
@@ -1788,8 +1851,17 @@ body::before {
   transition: var(--transition);
 }
 
+[data-theme="light"] .tool-textarea {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
 .tool-textarea:focus {
-  border-color: var(--accent-purple);
+  border-color: var(--accent-primary);
+}
+
+[data-theme="light"] .tool-textarea:focus {
+  border-color: var(--accent-primary);
 }
 
 .tool-output {
