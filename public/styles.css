@@ -5,48 +5,44 @@
 
 /* === CSS Custom Properties === */
 :root {
-  /* Modern Vibrant Color Scheme */
-  --bg-primary: #0f0f23;
-  --bg-secondary: #1a1a35;
-  --bg-tertiary: #252547;
-  --bg-card: rgba(37, 37, 71, 0.7);
-  --bg-card-hover: rgba(50, 50, 90, 0.8);
+  /* Modern Grey Color Scheme */
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #262626;
+  --bg-card: rgba(38, 38, 38, 0.8);
+  --bg-card-hover: rgba(50, 50, 50, 0.9);
   --bg-glass: rgba(255, 255, 255, 0.05);
   --bg-glass-strong: rgba(255, 255, 255, 0.1);
 
   /* High Contrast Text Colors */
   --text-primary: #ffffff;
-  --text-secondary: #e0e0ff;
-  --text-muted: #a0a0d0;
-  --text-accent: #d4c5fd;
+  --text-secondary: #e5e5e5;
+  --text-muted: #a3a3a3;
+  --text-accent: #d4d4d4;
 
-  /* Vibrant Accent Colors */
-  --accent-purple: #b794f6;
-  --accent-cyan: #22d3ee;
-  --accent-green: #4ade80;
-  --accent-pink: #f472b6;
-  --accent-orange: #fb923c;
-  --accent-red: #f87171;
-  --accent-yellow: #fbbf24;
-  --accent-blue: #60a5fa;
+  /* Grey Accent Colors */
+  --accent-primary: #737373;
+  --accent-secondary: #525252;
+  --accent-light: #a3a3a3;
+  --accent-dark: #404040;
+  --accent-highlight: #d4d4d4;
+  --accent-success: #22c55e;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
 
-  /* Vibrant Gradients */
-  --gradient-primary: linear-gradient(135deg, #b794f6 0%, #22d3ee 100%);
-  --gradient-warm: linear-gradient(135deg, #f472b6 0%, #fb923c 100%);
-  --gradient-cool: linear-gradient(135deg, #22d3ee 0%, #4ade80 100%);
-  --gradient-sunset: linear-gradient(135deg, #fb923c 0%, #f87171 100%);
-  --gradient-aurora: linear-gradient(135deg, #b794f6 0%, #f472b6 50%, #fb923c 100%);
-  --gradient-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a35 50%, #252547 100%);
+  /* Grey Gradients */
+  --gradient-primary: linear-gradient(135deg, #525252 0%, #737373 100%);
+  --gradient-light: linear-gradient(135deg, #737373 0%, #a3a3a3 100%);
+  --gradient-dark: linear-gradient(135deg, #262626 0%, #404040 100%);
+  --gradient-bg: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #262626 100%);
 
   --border-color: rgba(255, 255, 255, 0.1);
-  --border-active: rgba(183, 148, 246, 0.5);
+  --border-active: rgba(163, 163, 163, 0.5);
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 40px rgba(183, 148, 246, 0.3);
-  --shadow-glow-cyan: 0 0 40px rgba(34, 211, 238, 0.3);
-  --shadow-glow-pink: 0 0 40px rgba(244, 114, 182, 0.3);
+  --shadow-glow: 0 0 40px rgba(115, 115, 115, 0.3);
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -87,9 +83,9 @@ body::before {
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(183, 148, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(115, 115, 115, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(82, 82, 82, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(163, 163, 163, 0.08) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
   animation: backgroundPulse 15s ease-in-out infinite;
@@ -120,28 +116,28 @@ body::before {
 
 .orb-1 {
   width: 500px; height: 500px;
-  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(115, 115, 115, 0.3) 0%, transparent 70%);
   top: -150px; left: -150px;
   animation: float 20s ease-in-out infinite, colorShift1 10s ease-in-out infinite;
 }
 
 .orb-2 {
   width: 450px; height: 450px;
-  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(82, 82, 82, 0.3) 0%, transparent 70%);
   bottom: -100px; right: -100px;
   animation: float 25s ease-in-out infinite reverse, colorShift2 12s ease-in-out infinite;
 }
 
 .orb-3 {
   width: 350px; height: 350px;
-  background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(163, 163, 163, 0.25) 0%, transparent 70%);
   top: 50%; left: 50%;
   animation: float 30s ease-in-out infinite, colorShift3 15s ease-in-out infinite;
 }
 
 .orb-4 {
   width: 300px; height: 300px;
-  background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(64, 64, 64, 0.3) 0%, transparent 70%);
   top: 30%; right: 20%;
   animation: float 22s ease-in-out infinite reverse, colorShift4 11s ease-in-out infinite;
 }
@@ -236,8 +232,8 @@ body::before {
 }
 
 @keyframes heroLogoGlow {
-  0%, 100% { filter: drop-shadow(0 0 30px rgba(183, 148, 246, 0.8)); }
-  50% { filter: drop-shadow(0 0 50px rgba(34, 211, 238, 1)); }
+  0%, 100% { filter: drop-shadow(0 0 30px rgba(115, 115, 115, 0.8)); }
+  50% { filter: drop-shadow(0 0 50px rgba(163, 163, 163, 1)); }
 }
 
 .hero-title {
@@ -268,7 +264,7 @@ body::before {
   display: block;
   font-size: 4rem;
   font-weight: 900;
-  background: var(--gradient-aurora);
+  background: var(--gradient-light);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -382,8 +378,8 @@ body::before {
 
 .hero-feature:hover .feature-icon {
   transform: translateY(-10px) scale(1.1);
-  box-shadow: 0 10px 40px rgba(183, 148, 246, 0.4);
-  border-color: var(--accent-purple);
+  box-shadow: 0 10px 40px rgba(115, 115, 115, 0.4);
+  border-color: var(--accent-light);
 }
 
 .hero-feature:hover .feature-icon::before {
@@ -445,7 +441,7 @@ body::before {
 
 .hero-btn-primary:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 50px rgba(183, 148, 246, 0.6);
+  box-shadow: 0 15px 50px rgba(115, 115, 115, 0.6);
 }
 
 .hero-btn-primary:active {
@@ -497,7 +493,7 @@ body::before {
 .scroll-wheel {
   width: 4px;
   height: 8px;
-  background: var(--accent-purple);
+  background: var(--accent-light);
   border-radius: 2px;
   animation: scrollWheelMove 2s ease-in-out infinite;
 }
@@ -519,7 +515,7 @@ body::before {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: var(--accent-purple);
+  background: var(--accent-light);
   border-radius: 50%;
   opacity: 0.6;
   animation: particleFloat 20s linear infinite;
@@ -2509,32 +2505,63 @@ ity: 0; transform: translateX(100px); }
 
   /* Content area adjustments */
   .module-panel {
-    padding: 12px;
-    padding-bottom: 0;
+    padding: 0;
+    height: calc(100vh - var(--topbar-height));
+    max-height: calc(100vh - var(--topbar-height));
+    overflow: hidden;
+  }
+
+  /* Ensure proper layout for chat module */
+  #panel-chat {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #panel-chat .chat-container {
+    flex: 1;
+    min-height: 0;
+    padding: 0;
   }
 
   /* Fix chat container height on mobile */
   .chat-container {
-    height: calc(var(--vh, 1vh) * 100 - var(--topbar-height));
-    max-height: calc(var(--vh, 1vh) * 100 - var(--topbar-height));
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Ensure chat messages don't overflow */
+  /* Ensure chat messages scroll properly */
   .chat-messages {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     min-height: 0;
+    padding: 8px;
     padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Fix chat input area positioning */
   .chat-input-area {
     flex-shrink: 0;
-    padding: 8px 12px 12px;
+    padding: 8px;
     background: var(--bg-primary);
-    position: sticky;
-    bottom: 0;
+    position: relative;
     z-index: 10;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Ensure input wrapper is visible */
+  .input-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input-wrapper textarea {
+    width: 100%;
+    min-height: 40px;
   }
 
   /* Welcome message */
