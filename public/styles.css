@@ -5,7 +5,7 @@
 
 /* === CSS Custom Properties === */
 :root {
-  /* Modern Grey Color Scheme */
+  /* Dark Theme (Default) */
   --bg-primary: #0d0d0d;
   --bg-secondary: #1a1a1a;
   --bg-tertiary: #262626;
@@ -14,13 +14,11 @@
   --bg-glass: rgba(255, 255, 255, 0.05);
   --bg-glass-strong: rgba(255, 255, 255, 0.1);
 
-  /* High Contrast Text Colors */
   --text-primary: #ffffff;
   --text-secondary: #e5e5e5;
   --text-muted: #a3a3a3;
   --text-accent: #d4d4d4;
 
-  /* Grey Accent Colors */
   --accent-primary: #737373;
   --accent-secondary: #525252;
   --accent-light: #a3a3a3;
@@ -30,7 +28,6 @@
   --accent-warning: #f59e0b;
   --accent-error: #ef4444;
 
-  /* Grey Gradients */
   --gradient-primary: linear-gradient(135deg, #525252 0%, #737373 100%);
   --gradient-light: linear-gradient(135deg, #737373 0%, #a3a3a3 100%);
   --gradient-dark: linear-gradient(135deg, #262626 0%, #404040 100%);
@@ -58,6 +55,41 @@
 
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e5e5e5;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(245, 245, 245, 0.95);
+  --bg-glass: rgba(0, 0, 0, 0.03);
+  --bg-glass-strong: rgba(0, 0, 0, 0.06);
+
+  --text-primary: #0d0d0d;
+  --text-secondary: #262626;
+  --text-muted: #737373;
+  --text-accent: #404040;
+
+  --accent-primary: #525252;
+  --accent-secondary: #737373;
+  --accent-light: #404040;
+  --accent-dark: #a3a3a3;
+  --accent-highlight: #262626;
+
+  --gradient-primary: linear-gradient(135deg, #737373 0%, #525252 100%);
+  --gradient-light: linear-gradient(135deg, #a3a3a3 0%, #737373 100%);
+  --gradient-dark: linear-gradient(135deg, #404040 0%, #262626 100%);
+  --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #e5e5e5 100%);
+
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-active: rgba(82, 82, 82, 0.5);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 40px rgba(115, 115, 115, 0.2);
 }
 
 /* === Reset & Base === */
@@ -89,6 +121,13 @@ body::before {
   pointer-events: none;
   z-index: 0;
   animation: backgroundPulse 15s ease-in-out infinite;
+}
+
+[data-theme="light"] body::before {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(115, 115, 115, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(82, 82, 82, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(163, 163, 163, 0.03) 0%, transparent 50%);
 }
 
 @keyframes backgroundPulse {
@@ -885,6 +924,57 @@ body::before {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-glass-strong);
+  border-color: var(--border-active);
+  transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95) rotate(0deg);
+}
+
+.theme-icon {
+  position: absolute;
+  transition: var(--transition);
+}
+
+.sun-icon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+}
+
+.moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme="light"] .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme="light"] .moon-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
 }
 
 .ai-mode-selector {
@@ -2494,6 +2584,11 @@ ity: 0; transform: translateX(100px); }
     gap: 8px;
   }
 
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
   .ai-mode-selector label {
     display: none;
   }
@@ -2506,22 +2601,25 @@ ity: 0; transform: translateX(100px); }
   /* Content area adjustments */
   .module-panel {
     padding: 0;
-    height: calc(100vh - var(--topbar-height));
-    max-height: calc(100vh - var(--topbar-height));
+    height: 100%;
+    max-height: 100%;
     overflow: hidden;
   }
 
   /* Ensure proper layout for chat module */
   #panel-chat {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     padding: 0;
+    height: 100%;
   }
 
   #panel-chat .chat-container {
     flex: 1;
     min-height: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Fix chat container height on mobile */
@@ -2534,34 +2632,41 @@ ity: 0; transform: translateX(100px); }
 
   /* Ensure chat messages scroll properly */
   .chat-messages {
-    flex: 1;
+    flex: 1 1 auto;
     overflow-y: auto;
     overflow-x: hidden;
     min-height: 0;
-    padding: 8px;
-    padding-bottom: 8px;
+    padding: 12px 8px;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Fix chat input area positioning */
+  /* Fix chat input area positioning - CRITICAL FIX */
   .chat-input-area {
-    flex-shrink: 0;
-    padding: 8px;
+    flex: 0 0 auto;
+    padding: 12px 8px;
     background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
     position: relative;
     z-index: 10;
-    border-top: 1px solid var(--border-color);
+    width: 100%;
   }
 
   /* Ensure input wrapper is visible */
   .input-wrapper {
     width: 100%;
     max-width: 100%;
+    display: flex;
   }
 
   .input-wrapper textarea {
     width: 100%;
     min-height: 40px;
+    flex: 1;
+  }
+
+  /* Make sure buttons are visible */
+  .input-actions {
+    flex-shrink: 0;
   }
 
   /* Welcome message */
