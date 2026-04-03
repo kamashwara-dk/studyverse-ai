@@ -809,7 +809,7 @@ const heroParticles = document.getElementById('heroParticles');
 
 // Create floating particles
 function createParticles() {
-  const colors = ['#737373', '#525252', '#a3a3a3', '#d4d4d4', '#404040'];
+  const colors = ['#3b82f6', '#2563eb', '#60a5fa', '#1e40af', '#93c5fd'];
   for (let i = 0; i < 50; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
