@@ -798,96 +798,94 @@ document.getElementById('posterBtn').addEventListener('click', async () => {
 });
 
 // ============================================
-// Initialize
+// Initialize — Landing + App Logic
 // ============================================
 
-// Hero Landing Page Animation
-const heroLanding = document.getElementById('heroLanding');
+const landingWrapper = document.getElementById('landingWrapper');
 const mainApp = document.getElementById('mainApp');
-const heroEnterBtn = document.getElementById('heroEnterBtn');
-const heroParticles = document.getElementById('heroParticles');
+const landingNav = document.getElementById('landingNav');
 
-// Create floating particles
-function createParticles() {
-  const colors = ['#3b82f6', '#2563eb', '#60a5fa', '#1e40af', '#93c5fd'];
-  for (let i = 0; i < 50; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 20 + 's';
-    particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-    heroParticles.appendChild(particle);
-  }
-}
-
-createParticles();
-
-// Enter app function
+// ---- Enter App ----
 function enterApp() {
-  heroLanding.classList.add('hidden');
+  // Fade out landing
+  landingWrapper.style.transition = 'opacity 0.5s ease';
+  landingWrapper.style.opacity = '0';
   setTimeout(() => {
-    heroLanding.style.display = 'none';
+    landingWrapper.style.display = 'none';
+    document.body.style.overflow = 'hidden';
     mainApp.style.display = 'flex';
-    setTimeout(() => {
-      mainApp.classList.add('visible');
-    }, 50);
-  }, 800);
+    // Trigger entrance animation
+    requestAnimationFrame(() => {
+      setTimeout(() => mainApp.classList.add('visible'), 30);
+    });
+  }, 500);
 }
 
-// Button click to enter
+// --- Back to landing ---
+function backToLanding() {
+  mainApp.classList.remove('visible');
+  setTimeout(() => {
+    mainApp.style.display = 'none';
+    document.body.style.overflow = '';
+    landingWrapper.style.display = '';
+    landingWrapper.style.opacity = '0';
+    requestAnimationFrame(() => {
+      landingWrapper.style.transition = 'opacity 0.5s ease';
+      landingWrapper.style.opacity = '1';
+    });
+  }, 400);
+}
+
+// CTA buttons — enter app
+const heroEnterBtn = document.getElementById('heroEnterBtn');
+const navLaunchBtn = document.getElementById('navLaunchBtn');
+const footerLaunchBtn = document.getElementById('footerLaunchBtn');
+const backToHomeBtn = document.getElementById('backToHomeBtn');
+
 heroEnterBtn.addEventListener('click', enterApp);
+navLaunchBtn.addEventListener('click', enterApp);
+footerLaunchBtn.addEventListener('click', enterApp);
+backToHomeBtn.addEventListener('click', backToLanding);
 
-// Scroll to enter (Apple-style)
-let scrollTimeout;
-let scrollCount = 0;
+// Scroll to About section
+const heroAboutBtn = document.getElementById('heroAboutBtn');
+heroAboutBtn.addEventListener('click', () => {
+  document.getElementById('aboutSection').scrollIntoView({ behavior: 'smooth' });
+});
 
-window.addEventListener('wheel', (e) => {
-  if (heroLanding.style.display !== 'none') {
-    e.preventDefault();
-    
-    clearTimeout(scrollTimeout);
-    scrollCount++;
-    
-    scrollTimeout = setTimeout(() => {
-      scrollCount = 0;
-    }, 1000);
-    
-    // Enter after 3 scroll actions
-    if (scrollCount >= 3) {
-      enterApp();
-      scrollCount = 0;
-    }
-  }
-}, { passive: false });
-
-// Touch swipe to enter (mobile)
-let touchStartY = 0;
-let touchEndY = 0;
-
-heroLanding.addEventListener('touchstart', (e) => {
-  touchStartY = e.changedTouches[0].screenY;
-}, { passive: true });
-
-heroLanding.addEventListener('touchend', (e) => {
-  touchEndY = e.changedTouches[0].screenY;
-  const swipeDistance = touchStartY - touchEndY;
-  
-  // Swipe up to enter
-  if (swipeDistance > 100) {
-    enterApp();
+// ---- Sticky nav on scroll ----
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    landingNav.classList.add('scrolled');
+  } else {
+    landingNav.classList.remove('scrolled');
   }
 }, { passive: true });
 
-// Auto-enter after 10 seconds (optional)
+// ---- Scroll Reveal (IntersectionObserver) ----
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+);
+
+// Observe all reveal-up elements
+document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+// Trigger hero elements immediately (they are in viewport on load)
 setTimeout(() => {
-  if (heroLanding.style.display !== 'none') {
-    // Uncomment to enable auto-enter
-    // enterApp();
-  }
-}, 10000);
+  document.querySelectorAll('.hero-inner .reveal-up').forEach(el => {
+    el.classList.add('revealed');
+  });
+}, 100);
 
-// Fix viewport height on mobile (accounts for browser address bar)
+// ---- Mobile viewport fix ----
 function setMobileVH() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -899,16 +897,20 @@ if (window.innerWidth <= 768) {
   window.addEventListener('orientationchange', setMobileVH);
 }
 
-// Check API health
+// ---- API Health Check ----
 fetch(`${API_BASE}/api/health`)
   .then(r => r.json())
   .then(() => {
-    document.querySelector('.status-dot').style.background = 'var(--accent-green)';
-    document.querySelector('.status-badge span').textContent = 'AI Connected';
+    const dot = document.querySelector('.status-dot');
+    const label = document.querySelector('.status-badge span');
+    if (dot) dot.style.background = '#00C660';
+    if (label) label.textContent = 'AI Connected';
   })
   .catch(() => {
-    document.querySelector('.status-dot').style.background = 'var(--accent-red)';
-    document.querySelector('.status-badge span').textContent = 'Disconnected';
+    const dot = document.querySelector('.status-dot');
+    const label = document.querySelector('.status-badge span');
+    if (dot) dot.style.background = '#FF4D4D';
+    if (label) label.textContent = 'Disconnected';
   });
 
-console.log('🚀 StudyVerse AI loaded');
+console.log('🚀 StudyVerse AI — Premium Edition loaded');

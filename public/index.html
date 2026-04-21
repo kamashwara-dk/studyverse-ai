@@ -1,88 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="StudyVerse AI — Your intelligent academic command center. Upload notes, ask questions, generate flashcards, quizzes, and more with AI-powered study tools.">
-  <title>StudyVerse AI — Smart Academic Command Center</title>
+  <meta name="description" content="StudyVerse AI — A professional AI-powered academic command center. Featuring AI Chat, Document Q&A, Smart Flashcards, Quizzes, Mind Maps, Vision AI, and more.">
+  <meta name="theme-color" content="#009B4D">
+  <title>StudyVerse AI — Intelligent Academic Command Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Animated Background -->
-  <div class="bg-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-  </div>
 
-  <div class="app-container">
-    <!-- Landing Hero Section -->
-    <section class="hero-landing" id="heroLanding">
-      <div class="hero-content">
-        <div class="hero-logo-large">
-          <svg width="120" height="120" viewBox="0 0 28 28" fill="none">
-            <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#heroLogoGrad)" stroke-width="2" fill="none"/>
-            <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#heroLogoGrad)"/>
-            <defs><linearGradient id="heroLogoGrad" x1="2" y1="2" x2="26" y2="26"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
-          </svg>
+  <!-- ========================================
+       LANDING PAGE
+       ======================================== -->
+  <div class="landing-wrapper" id="landingWrapper">
+
+    <!-- Sticky Navbar -->
+    <nav class="landing-nav" id="landingNav">
+      <div class="landing-nav-inner">
+        <div class="landing-logo">
+          <div class="landing-logo-mark">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#navLogoGrad)" stroke-width="1.8" fill="none"/>
+              <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#navLogoGrad)"/>
+              <defs>
+                <linearGradient id="navLogoGrad" x1="2" y1="2" x2="26" y2="26">
+                  <stop stop-color="#009B4D"/>
+                  <stop offset="1" stop-color="#FFCC00"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="landing-logo-text">StudyVerse<span class="landing-logo-ai">AI</span></span>
         </div>
-        <h1 class="hero-title">
-          <span class="hero-title-line">Welcome to</span>
-          <span class="hero-title-main">StudyVerse AI</span>
+        <div class="landing-nav-actions">
+          <button class="nav-launch-btn" id="navLaunchBtn">Launch Platform</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+
+      <div class="hero-inner">
+        <div class="hero-eyebrow reveal-up delay-0">
+          <span class="eyebrow-dot"></span>
+          <span>Agentic AI · Academic Intelligence</span>
+        </div>
+
+        <h1 class="hero-headline reveal-up delay-1">
+          The Intelligent<br>
+          <span class="headline-accent">Academic Command</span><br>
+          Center
         </h1>
-        <p class="hero-subtitle">Your intelligent academic command center powered by advanced AI</p>
-        <div class="hero-features">
-          <div class="hero-feature">
-            <div class="feature-icon">🧠</div>
-            <div class="feature-text">AI Tutor</div>
+
+        <p class="hero-subline reveal-up delay-2">
+          Powered by advanced AI. Designed for serious learners.<br>
+          From document comprehension to multi-step AI agents — all in one platform.
+        </p>
+
+        <div class="hero-stats reveal-up delay-3">
+          <div class="hero-stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">AI Tools</span>
           </div>
-          <div class="hero-feature">
-            <div class="feature-icon">📚</div>
-            <div class="feature-text">Document Q&A</div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">RAG</span>
+            <span class="stat-label">Doc Pipeline</span>
           </div>
-          <div class="hero-feature">
-            <div class="feature-icon">🎯</div>
-            <div class="feature-text">Smart Tools</div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">Gemini</span>
+            <span class="stat-label">AI Engine</span>
           </div>
-          <div class="hero-feature">
-            <div class="feature-icon">🚀</div>
-            <div class="feature-text">AI Agents</div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">Multi</span>
+            <span class="stat-label">modal</span>
           </div>
         </div>
-        <div class="hero-cta">
-          <button class="hero-btn-primary" id="heroEnterBtn">
+
+        <div class="hero-cta reveal-up delay-4">
+          <button class="hero-enter-btn" id="heroEnterBtn">
             <span>Enter StudyVerse</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </button>
-        </div>
-        <div class="scroll-indicator">
-          <div class="scroll-icon">
-            <div class="scroll-wheel"></div>
-          </div>
-          <span>Scroll to explore</span>
+          <button class="hero-about-btn" id="heroAboutBtn">
+            <span>Meet the Developer</span>
+          </button>
         </div>
       </div>
-      <div class="hero-particles" id="heroParticles"></div>
+
+      <div class="hero-scroll-indicator" id="heroScrollIndicator">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
     </section>
 
-    <!-- Main App Container (Hidden Initially) -->
-    <div class="main-app" id="mainApp" style="display: none;">
+    <!-- Capabilities Showcase -->
+    <section class="capabilities-section" id="capabilitiesSection">
+      <div class="section-inner">
+        <div class="section-label reveal-up">Core Capabilities</div>
+        <h2 class="section-title reveal-up">Everything you need to<br><span class="title-accent">master any subject</span></h2>
+
+        <div class="capabilities-grid">
+          <div class="cap-card reveal-up" style="--delay: 0s">
+            <div class="cap-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3>AI Chat Tutor</h3>
+            <p>Multimodal AI tutor with selectable roles — tutor, researcher, or summarizer.</p>
+          </div>
+          <div class="cap-card reveal-up" style="--delay: 0.05s">
+            <div class="cap-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+            </div>
+            <h3>Document Q&amp;A</h3>
+            <p>RAG pipeline — upload PDFs or DOCX and ask precise questions about your content.</p>
+          </div>
+          <div class="cap-card reveal-up" style="--delay: 0.1s">
+            <div class="cap-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <h3>AI Agent</h3>
+            <p>Multi-step task executor — plans, uses tools, and synthesises a complete answer.</p>
+          </div>
+          <div class="cap-card reveal-up" style="--delay: 0.15s">
+            <div class="cap-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Smart Flashcards</h3>
+            <p>AI-generated flashcards with flip interactions for active recall learning.</p>
+          </div>
+          <div class="cap-card reveal-up" style="--delay: 0.2s">
+            <div class="cap-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3>Quiz Generator</h3>
+            <p>Instant MCQ quizzes with explanations and scored results for self-assessment.</p>
+          </div>
+          <div class="cap-card reveal-up" style="--delay: 0.25s">
+            <div class="cap-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Vision AI</h3>
+            <p>Upload diagrams, charts, or handwritten notes — AI analyzes and explains them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Developer Section -->
+    <section class="about-section" id="aboutSection">
+      <div class="section-inner">
+        <div class="section-label reveal-up">The Developer</div>
+        <h2 class="section-title reveal-up">Built with precision<br><span class="title-accent">by a passionate engineer</span></h2>
+
+        <div class="dev-card reveal-up">
+          <div class="dev-avatar">
+            <div class="dev-avatar-ring"></div>
+            <img
+              src="profile.jpeg"
+              alt="Kamashwara D K — AI Engineer"
+              class="dev-avatar-photo"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="dev-info">
+            <h3 class="dev-name">Kamashwara D K</h3>
+            <p class="dev-title">AI Engineer &amp; Full-Stack Developer</p>
+            <p class="dev-bio">
+              Building intelligent systems at the intersection of Agentic AI and modern web technologies.
+              StudyVerse AI is a demonstration of end-to-end AI application development — from RAG pipelines
+              to multimodal Gemini integration.
+            </p>
+
+            <div class="dev-tech-tags">
+              <span class="tech-tag">Agentic AI</span>
+              <span class="tech-tag">Gemini API</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Full-Stack</span>
+            </div>
+
+            <div class="dev-social-links">
+              <a href="https://www.linkedin.com/in/kamashwara-dk/" target="_blank" rel="noopener noreferrer" class="social-link" id="linkedinLink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                <span>LinkedIn</span>
+                <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+              <a href="https://github.com/kamashwara-dk" target="_blank" rel="noopener noreferrer" class="social-link" id="githubLink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                <span>GitHub</span>
+                <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="landing-logo-mark small">
+            <svg width="18" height="18" viewBox="0 0 28 28" fill="none">
+              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#footerGrad)" stroke-width="1.8" fill="none"/>
+              <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#footerGrad)"/>
+              <defs>
+                <linearGradient id="footerGrad" x1="2" y1="2" x2="26" y2="26">
+                  <stop stop-color="#009B4D"/>
+                  <stop offset="1" stop-color="#FFCC00"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span>StudyVerse AI</span>
+        </div>
+        <span class="footer-copy">© 2025 Kamashwara D K. All rights reserved.</span>
+        <button class="footer-launch-btn" id="footerLaunchBtn">Launch Platform →</button>
+      </div>
+    </footer>
+
+  </div>
+  <!-- END LANDING -->
+
+
+  <!-- ========================================
+       MAIN APP (hidden initially)
+       ======================================== -->
+  <div class="main-app" id="mainApp" style="display:none;">
+
     <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="logo">
           <div class="logo-icon">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
-              <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#logoGrad)"/>
-              <defs><linearGradient id="logoGrad" x1="2" y1="2" x2="26" y2="26"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#sidebarLogoGrad)" stroke-width="1.8" fill="none"/>
+              <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#sidebarLogoGrad)"/>
+              <defs>
+                <linearGradient id="sidebarLogoGrad" x1="2" y1="2" x2="26" y2="26">
+                  <stop stop-color="#009B4D"/>
+                  <stop offset="1" stop-color="#FFCC00"/>
+                </linearGradient>
+              </defs>
             </svg>
           </div>
           <span class="logo-text">StudyVerse<span class="logo-ai">AI</span></span>
@@ -92,17 +266,17 @@
       <div class="nav-section">
         <span class="nav-label">MAIN</span>
         <button class="nav-item active" data-module="chat" id="nav-chat">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           <span>AI Chat</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="rag" id="nav-rag">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Doc Q&A</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Doc Q&amp;A</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="agent" id="nav-agent">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
           <span>AI Agent</span>
           <div class="nav-indicator"></div>
         </button>
@@ -111,22 +285,22 @@
       <div class="nav-section">
         <span class="nav-label">STUDY TOOLS</span>
         <button class="nav-item" data-module="summary" id="nav-summary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
           <span>Summarizer</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="flashcards" id="nav-flashcards">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <span>Flashcards</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="quiz" id="nav-quiz">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           <span>Quiz</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="mindmap" id="nav-mindmap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><line x1="10.5" y1="10.5" x2="7.5" y2="7.5"/><line x1="13.5" y1="10.5" x2="16.5" y2="7.5"/><line x1="10.5" y1="13.5" x2="7.5" y2="16.5"/><line x1="13.5" y1="13.5" x2="16.5" y2="16.5"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><line x1="10.5" y1="10.5" x2="7.5" y2="7.5"/><line x1="13.5" y1="10.5" x2="16.5" y2="7.5"/><line x1="10.5" y1="13.5" x2="7.5" y2="16.5"/><line x1="13.5" y1="13.5" x2="16.5" y2="16.5"/></svg>
           <span>Mind Map</span>
           <div class="nav-indicator"></div>
         </button>
@@ -135,17 +309,17 @@
       <div class="nav-section">
         <span class="nav-label">MULTIMODAL</span>
         <button class="nav-item" data-module="vision" id="nav-vision">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           <span>Vision AI</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="voice" id="nav-voice">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
           <span>Voice</span>
           <div class="nav-indicator"></div>
         </button>
         <button class="nav-item" data-module="poster" id="nav-poster">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
           <span>Poster</span>
           <div class="nav-indicator"></div>
         </button>
@@ -156,6 +330,10 @@
           <div class="status-dot"></div>
           <span>AI Connected</span>
         </div>
+        <button class="back-to-home-btn" id="backToHomeBtn" title="Back to landing">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </button>
       </div>
     </nav>
 
@@ -165,34 +343,22 @@
       <header class="topbar">
         <div class="topbar-left">
           <button class="menu-toggle" id="menuToggle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
           <h1 class="page-title" id="pageTitle">AI Chat</h1>
           <span class="page-badge" id="pageBadge">Multimodal Tutor</span>
         </div>
         <div class="topbar-right">
           <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
+            <svg class="theme-icon sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="theme-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
           <div class="ai-mode-selector">
             <label>AI Role:</label>
             <select id="aiRole">
-              <option value="tutor">🎓 Tutor</option>
-              <option value="researcher">🔬 Researcher</option>
-              <option value="summarizer">📝 Summarizer</option>
+              <option value="tutor">Tutor</option>
+              <option value="researcher">Researcher</option>
+              <option value="summarizer">Summarizer</option>
             </select>
           </div>
         </div>
@@ -206,14 +372,20 @@
           <div class="chat-container">
             <div class="chat-messages" id="chatMessages">
               <div class="welcome-message">
-                <div class="welcome-icon">🧠</div>
+                <div class="welcome-icon">
+                  <svg width="32" height="32" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#welcomeGrad)" stroke-width="1.8" fill="none"/>
+                    <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="url(#welcomeGrad)"/>
+                    <defs><linearGradient id="welcomeGrad" x1="2" y1="2" x2="26" y2="26"><stop stop-color="#009B4D"/><stop offset="1" stop-color="#FFCC00"/></linearGradient></defs>
+                  </svg>
+                </div>
                 <h2>Welcome to StudyVerse AI</h2>
                 <p>Your intelligent academic command center. Ask me anything — I can be your tutor, researcher, or study companion.</p>
                 <div class="quick-actions">
-                  <button class="quick-btn" onclick="sendQuickMessage('Explain the concept of machine learning in simple terms')">🤖 Explain ML</button>
-                  <button class="quick-btn" onclick="sendQuickMessage('What are the key differences between DNA and RNA?')">🧬 DNA vs RNA</button>
-                  <button class="quick-btn" onclick="sendQuickMessage('Solve step by step: Find the derivative of f(x) = 3x² + 2x - 5')">📐 Calculus Help</button>
-                  <button class="quick-btn" onclick="sendQuickMessage('Explain quantum computing and its applications')">⚛️ Quantum Computing</button>
+                  <button class="quick-btn" onclick="sendQuickMessage('Explain the concept of machine learning in simple terms')">Explain ML</button>
+                  <button class="quick-btn" onclick="sendQuickMessage('What are the key differences between DNA and RNA?')">DNA vs RNA</button>
+                  <button class="quick-btn" onclick="sendQuickMessage('Solve step by step: Find the derivative of f(x) = 3x² + 2x - 5')">Calculus Help</button>
+                  <button class="quick-btn" onclick="sendQuickMessage('Explain quantum computing and its applications')">Quantum Computing</button>
                 </div>
               </div>
             </div>
@@ -222,10 +394,10 @@
                 <textarea id="chatInput" placeholder="Ask StudyVerse AI anything..." rows="1"></textarea>
                 <div class="input-actions">
                   <button class="btn-icon voice-btn" id="chatVoiceBtn" title="Voice input">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg>
                   </button>
                   <button class="btn-send" id="chatSendBtn" title="Send message">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
                   </button>
                 </div>
               </div>
@@ -238,12 +410,12 @@
           <div class="rag-container">
             <div class="rag-sidebar">
               <div class="glass-card">
-                <h3>📄 Upload Study Materials</h3>
-                <p class="card-desc">Upload PDFs, DOCX, or TXT files. I'll analyze them and answer your questions using RAG (Retrieval-Augmented Generation).</p>
+                <h3>Upload Study Materials</h3>
+                <p class="card-desc">Upload PDFs, DOCX, or TXT files. I'll analyze them and answer your questions using RAG.</p>
                 <div class="upload-zone" id="uploadZone">
                   <input type="file" id="ragFileInput" accept=".pdf,.docx,.txt" hidden>
                   <div class="upload-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                   </div>
                   <span>Click or drop files here</span>
                   <span class="upload-hint">PDF, DOCX, TXT (max 20MB)</span>
@@ -254,8 +426,8 @@
             <div class="rag-chat">
               <div class="chat-messages" id="ragMessages">
                 <div class="welcome-message">
-                  <div class="welcome-icon">📚</div>
-                  <h2>Document Q&A</h2>
+                  <div class="welcome-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#009B4D" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+                  <h2>Document Q&amp;A</h2>
                   <p>Upload your study materials, then ask questions. I'll find relevant sections and give you context-aware answers.</p>
                 </div>
               </div>
@@ -263,7 +435,7 @@
                 <div class="input-wrapper">
                   <textarea id="ragInput" placeholder="Ask a question about your documents..." rows="1"></textarea>
                   <button class="btn-send" id="ragSendBtn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
                   </button>
                 </div>
               </div>
@@ -275,7 +447,9 @@
         <section class="module-panel" id="panel-agent">
           <div class="agent-container">
             <div class="glass-card agent-header">
-              <div class="agent-icon">🤖</div>
+              <div class="agent-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#009B4D" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+              </div>
               <div>
                 <h2>AI Agent — Multi-Step Task Executor</h2>
                 <p>Give me a complex academic task. I'll plan it out, break it into steps, use specialized tools, and deliver a comprehensive result.</p>
@@ -285,7 +459,7 @@
               <div class="input-wrapper large">
                 <textarea id="agentInput" placeholder="e.g., Research the topic of neural networks, create a summary, generate flashcards, and prepare a quiz..." rows="3"></textarea>
                 <button class="btn-primary" id="agentExecuteBtn">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
                   Execute Task
                 </button>
               </div>
@@ -293,22 +467,10 @@
             <div class="agent-results" id="agentResults">
               <div class="agent-placeholder">
                 <div class="placeholder-grid">
-                  <div class="placeholder-card">
-                    <span class="p-icon">📋</span>
-                    <span>Planning</span>
-                  </div>
-                  <div class="placeholder-card">
-                    <span class="p-icon">⚡</span>
-                    <span>Tool Calling</span>
-                  </div>
-                  <div class="placeholder-card">
-                    <span class="p-icon">🔄</span>
-                    <span>Execution Loop</span>
-                  </div>
-                  <div class="placeholder-card">
-                    <span class="p-icon">📊</span>
-                    <span>Aggregation</span>
-                  </div>
+                  <div class="placeholder-card"><span class="p-icon">📋</span><span>Planning</span></div>
+                  <div class="placeholder-card"><span class="p-icon">⚡</span><span>Tool Calling</span></div>
+                  <div class="placeholder-card"><span class="p-icon">🔄</span><span>Execution</span></div>
+                  <div class="placeholder-card"><span class="p-icon">📊</span><span>Aggregation</span></div>
                 </div>
               </div>
             </div>
@@ -319,16 +481,16 @@
         <section class="module-panel" id="panel-summary">
           <div class="tool-container">
             <div class="glass-card">
-              <h2>📝 Smart Summarizer</h2>
+              <h2>Smart Summarizer</h2>
               <p>Enter a topic or paste text to get a concise, well-organized summary perfect for revision.</p>
               <div class="tool-input-group">
                 <input type="text" id="summaryTopic" placeholder="Enter topic (e.g., Photosynthesis, World War II)" class="tool-input">
-                <textarea id="summaryContent" placeholder="(Optional) Paste your notes or content here for a more targeted summary..." rows="4" class="tool-textarea"></textarea>
+                <textarea id="summaryContent" placeholder="(Optional) Paste your notes or content here..." rows="4" class="tool-textarea"></textarea>
                 <button class="btn-primary" id="summaryBtn">Generate Summary</button>
               </div>
             </div>
             <div class="tool-output glass-card" id="summaryOutput">
-              <div class="empty-state">Your summary will appear here ✨</div>
+              <div class="empty-state">Your summary will appear here</div>
             </div>
           </div>
         </section>
@@ -337,7 +499,7 @@
         <section class="module-panel" id="panel-flashcards">
           <div class="tool-container">
             <div class="glass-card">
-              <h2>🃏 Flashcard Generator</h2>
+              <h2>Flashcard Generator</h2>
               <p>Generate study flashcards with AI. Click cards to flip between question and answer.</p>
               <div class="tool-input-group row">
                 <input type="text" id="flashcardTopic" placeholder="Enter topic..." class="tool-input flex-1">
@@ -345,7 +507,7 @@
               </div>
             </div>
             <div class="flashcard-grid" id="flashcardGrid">
-              <div class="empty-state">Your flashcards will appear here 🃏</div>
+              <div class="empty-state">Your flashcards will appear here</div>
             </div>
           </div>
         </section>
@@ -354,7 +516,7 @@
         <section class="module-panel" id="panel-quiz">
           <div class="tool-container">
             <div class="glass-card">
-              <h2>❓ Quiz Generator</h2>
+              <h2>Quiz Generator</h2>
               <p>Test your knowledge with AI-generated quizzes. Get instant feedback and explanations.</p>
               <div class="tool-input-group row">
                 <input type="text" id="quizTopic" placeholder="Enter topic for quiz..." class="tool-input flex-1">
@@ -362,7 +524,7 @@
               </div>
             </div>
             <div class="quiz-container" id="quizContainer">
-              <div class="empty-state">Your quiz will appear here 🧠</div>
+              <div class="empty-state">Your quiz will appear here</div>
             </div>
           </div>
         </section>
@@ -371,15 +533,15 @@
         <section class="module-panel" id="panel-mindmap">
           <div class="tool-container">
             <div class="glass-card">
-              <h2>🗺️ Mind Map Generator</h2>
-              <p>Visualize topics with AI-generated mind maps. Perfect for understanding relationships between concepts.</p>
+              <h2>Mind Map Generator</h2>
+              <p>Visualize topics with AI-generated mind maps. Perfect for understanding concept relationships.</p>
               <div class="tool-input-group row">
                 <input type="text" id="mindmapTopic" placeholder="Enter topic for mind map..." class="tool-input flex-1">
                 <button class="btn-primary" id="mindmapBtn">Generate Mind Map</button>
               </div>
             </div>
             <div class="mindmap-container glass-card" id="mindmapContainer">
-              <div class="empty-state">Your mind map will appear here 🗺️</div>
+              <div class="empty-state">Your mind map will appear here</div>
             </div>
           </div>
         </section>
@@ -388,12 +550,12 @@
         <section class="module-panel" id="panel-vision">
           <div class="vision-container">
             <div class="glass-card">
-              <h2>👁️ Vision AI — Image Analysis</h2>
+              <h2>Vision AI — Image Analysis</h2>
               <p>Upload an image (diagram, chart, handwritten notes, photo) and I'll analyze it with AI vision capabilities.</p>
               <div class="vision-upload-area">
                 <div class="vision-dropzone" id="visionDropzone">
                   <input type="file" id="visionFileInput" accept="image/*" hidden>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
                   <span>Drop an image or click to upload</span>
                 </div>
                 <img id="visionPreview" class="vision-preview hidden" alt="Uploaded image preview">
@@ -404,7 +566,7 @@
               </div>
             </div>
             <div class="tool-output glass-card" id="visionOutput">
-              <div class="empty-state">Image analysis will appear here 👁️</div>
+              <div class="empty-state">Image analysis will appear here</div>
             </div>
           </div>
         </section>
@@ -413,15 +575,15 @@
         <section class="module-panel" id="panel-voice">
           <div class="voice-container">
             <div class="glass-card voice-main">
-              <h2>🎤 Voice Assistant</h2>
-              <p>Speak your question and hear the AI response. Hands-free learning experience!</p>
+              <h2>Voice Assistant</h2>
+              <p>Speak your question and hear the AI response. Hands-free learning experience.</p>
               <div class="voice-visualizer">
                 <div class="voice-circle" id="voiceCircle">
                   <div class="voice-ring ring-1"></div>
                   <div class="voice-ring ring-2"></div>
                   <div class="voice-ring ring-3"></div>
                   <button class="voice-record-btn" id="voiceRecordBtn">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
                   </button>
                 </div>
               </div>
@@ -441,33 +603,32 @@
         <section class="module-panel" id="panel-poster">
           <div class="tool-container">
             <div class="glass-card">
-              <h2>🎨 Study Poster Generator</h2>
+              <h2>Study Poster Generator</h2>
               <p>Create beautiful study posters with key concepts, facts, and memory aids.</p>
               <div class="tool-input-group">
                 <input type="text" id="posterTopic" placeholder="Enter topic for poster..." class="tool-input">
                 <div class="style-selector">
                   <label>Style:</label>
                   <select id="posterStyle">
-                    <option value="academic">📚 Academic</option>
-                    <option value="creative">🎨 Creative</option>
-                    <option value="minimal">✨ Minimal</option>
-                    <option value="colorful">🌈 Colorful</option>
+                    <option value="academic">Academic</option>
+                    <option value="creative">Creative</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="colorful">Colorful</option>
                   </select>
                 </div>
                 <button class="btn-primary" id="posterBtn">Generate Poster</button>
               </div>
             </div>
             <div class="poster-output glass-card" id="posterOutput">
-              <div class="empty-state">Your poster will appear here 🎨</div>
+              <div class="empty-state">Your poster will appear here</div>
             </div>
           </div>
         </section>
 
       </div>
     </main>
-    </div>
-    <!-- End Main App -->
   </div>
+  <!-- END MAIN APP -->
 
   <!-- Loading Overlay -->
   <div class="loading-overlay hidden" id="loadingOverlay">
